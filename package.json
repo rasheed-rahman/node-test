@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -w",
+    "start": "node dist/src/index.js",
     "test": "jest"
   },
   "keywords": [],
