@@ -1,6 +1,6 @@
 export interface Stock {
     sku: string;
-    stock: number
+    stock: number;
 }
 
 export interface StockLevel {
