@@ -14,7 +14,7 @@ jobs:
       - name: Minor Version Bump
         run: |
           git fetch origin develop
-          git checkout RELEASE/${{github.ref_name}}
+          git checkout -b RELEASE/${{github.ref_name}}
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
           npm version ${{github.ref_name}} -m "v%s"
