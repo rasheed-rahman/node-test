@@ -1,0 +1,19 @@
+name: "cd"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # deployment steps here...
+
+      - name: Minor Version Bump
+        run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email $GITHUB_ACTOR@users.noreply.github.com
+          npm version minor -m "v%s"
+          git push
