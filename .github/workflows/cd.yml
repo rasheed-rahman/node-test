@@ -1,8 +1,8 @@
 name: "cd"
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [created]
+
 jobs:
   cd:
     runs-on: ubuntu-latest
@@ -15,5 +15,6 @@ jobs:
         run: |
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
-          npm version minor -m "v%s"
+          npm version ${{github.ref_name}} -m "v%s"
           git push
+          gh pr create -a @me -B main -t RELEASE/${{github.ref_name}} -b ${{ github.event.client_payload.release.body }}
