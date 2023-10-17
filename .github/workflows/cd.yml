@@ -1,0 +1,25 @@
+name: "cd"
+on:
+  release:
+    types: [published]
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # deployment steps here...
+
+      - name: Release Version Tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin develop
+          git checkout -b RELEASE/${{github.ref_name}}
+          git config user.name $GITHUB_ACTOR
+          git config user.email $GITHUB_ACTOR@users.noreply.github.com
+          npm version ${{github.ref_name}} -m "v%s"
+          git push --set-upstream origin RELEASE/${{github.ref_name}}
+          gh pr create -a $GITHUB_ACTOR -B main -t RELEASE/${{github.ref_name}} -b "${{ github.event.release.body }}"
