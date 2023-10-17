@@ -22,10 +22,3 @@ jobs:
 
       - name: Run test
         run: npm test
-
-      - name: Bump version
-        run: |
-          git config user.name $GITHUB_ACTOR
-          git config user.email $GITHUB_ACTOR@users.noreply.github.com
-          npm version patch -m "v%s"
-          git push
