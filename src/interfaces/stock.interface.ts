@@ -1,9 +1,9 @@
-export interface Stock {
+export type Stock = {
     sku: string;
     stock: number;
 }
 
-export interface StockLevel {
+export type StockLevel = {
     sku: string;
     qty: number;
 }
