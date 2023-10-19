@@ -17,6 +17,5 @@ jobs:
         with:
           release-type: node
           package-name: node-test
-          default-branch: main
           pull-request-title-pattern: "RELEASE/${version}"
           pull-request-header: ":robot: I have created a release"
