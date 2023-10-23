@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.1](https://github.com/rasheed-rahman/node-test/compare/v1.14.0...v1.14.1) (2023-10-23)
+
+
+### Bug Fixes
+
+* **Stock:** reword error reason ([06a5a67](https://github.com/rasheed-rahman/node-test/commit/06a5a6742283512161449a1c12fc607271e44506))
+
 ## [1.14.0](https://github.com/rasheed-rahman/node-test/compare/1.13.0...v1.14.0) (2023-10-19)
 
 
