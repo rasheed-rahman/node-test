@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.15.0](https://github.com/rasheed-rahman/node-test/compare/v1.14.1...v1.15.0) (2023-10-23)
+
+
+### Features
+
+* **Stock:** add documentation ([ebbdb7d](https://github.com/rasheed-rahman/node-test/commit/ebbdb7d0411076775906e075cb238a96f8acf0bd))
+
+
+### Bug Fixes
+
+* **Stock:** add doc for interface ([700fcb0](https://github.com/rasheed-rahman/node-test/commit/700fcb0960e372738337614959f2900e302658e8))
+* **Stock:** lint code ([379dc1a](https://github.com/rasheed-rahman/node-test/commit/379dc1af1ec4420640559f556bda4ea5cf60f38b))
+
 ## [1.14.1](https://github.com/rasheed-rahman/node-test/compare/v1.14.0...v1.14.1) (2023-10-23)
 
 
