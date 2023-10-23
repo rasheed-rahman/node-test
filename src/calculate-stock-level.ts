@@ -13,7 +13,7 @@ export const calculateStockLevel = (sku: string): Promise<StockLevel> => {
     const transactions = findTransactionsBySKU(sku)
 
     if (!stock && !transactions.length) {
-        return Promise.reject("SKU isn't found")
+        return Promise.reject("SKU isn't found");
     }
 
     const stockLevel: StockLevel = {
@@ -21,6 +21,9 @@ export const calculateStockLevel = (sku: string): Promise<StockLevel> => {
         qty: stock?.stock || 0 // default to 0 if not in stock
     }
 
+    /**
+     * Loop
+     */
     for (const transaction of transactions) {
         switch (transaction.type) {
             case TransactionType.Order:
