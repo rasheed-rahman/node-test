@@ -13,7 +13,7 @@ export const calculateStockLevel = (sku: string): Promise<StockLevel> => {
     const transactions = findTransactionsBySKU(sku)
 
     if (!stock && !transactions.length) {
-        return Promise.reject('SKU not found')
+        return Promise.reject("SKU isn't found")
     }
 
     const stockLevel: StockLevel = {

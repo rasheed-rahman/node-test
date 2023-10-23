@@ -22,7 +22,7 @@ describe('calculateStockLevel', () => {
         spyOnTransactions.mockReturnValue([])
 
         // Act & Assert...
-        await expect(calculateStockLevel('sku')).rejects.toMatch('SKU not found')
+        await expect(calculateStockLevel('sku')).rejects.toMatch("SKU isn't found")
     })
 
     it('should reflect start quantity of 0 if SKU not in stock, but in transactions', async () => {
