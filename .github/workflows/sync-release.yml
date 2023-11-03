@@ -17,4 +17,4 @@ jobs:
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
           gh pr create -a $GITHUB_ACTOR -B develop -t main -b "Main to Develop"
-          gh pr merge --admin
+          gh pr merge --admin --merge
