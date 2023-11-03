@@ -4,7 +4,7 @@ on:
     branches:
       - main # or `master`, depending on the branch used for release
 jobs:
-  ci:
+  sync-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,4 +17,4 @@ jobs:
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
           gh pr create -a $GITHUB_ACTOR -B develop -t main -b "Main to Develop"
-          gh pr merge --auto --admin
+          gh pr merge --admin
