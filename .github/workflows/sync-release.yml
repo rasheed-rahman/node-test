@@ -16,5 +16,5 @@ jobs:
         run: |
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
-          gh pr create -a $GITHUB_ACTOR -B develop -t main -b "Main to Develop"
+          gh pr create -a $GITHUB_ACTOR -B develop -t "Main to Develop" -b "Syncing the latest release on main branch to develop"
           gh pr merge --admin --merge
