@@ -1,8 +1,8 @@
-name: "ci"
+name: "security production packages"
 on:
   push:
 jobs:
-  ci:
+  npm-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,8 +15,7 @@ jobs:
           key: node_modules-${{ hashFiles('package-lock.json') }}
 
       - name: NPM Install
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Run test
-        run: npm test
+      - name: Run audit
+        run: npm audit --omit=dev
