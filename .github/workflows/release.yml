@@ -1,17 +1,15 @@
-name: "cd"
+name: "release"
 on:
   release:
     types: [published]
 
 jobs:
-  cd:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      # deployment steps here...
-
-      - name: Release Version Tag
+      - name: Create Release PR
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
